@@ -1,0 +1,52 @@
+services:
+  db2:
+    image: icr.io/db2_community/db2:11.5.9.0
+    container_name: db2-lab
+    privileged: true
+    ports:
+      - "50000:50000"
+    environment:
+      LICENSE: accept
+      DB2INST1_PASSWORD: passw0rd
+      DBNAME: labdb
+      AUTOCONFIG: "false"
+    volumes:
+      - db2_data:/database
+      - ./sql/db2:/sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "su - db2inst1 -c 'db2 connect to labdb' | grep -q 'Database Connection Information'"]
+      interval: 15s
+      timeout: 10s
+      retries: 40
+
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-lab
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd
+      MYSQL_DATABASE: labdb
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: passw0rd
+      TZ: UTC
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      - --default-time-zone=+00:00
+      - --slow-query-log=ON
+      - --long-query-time=0.1
+      - --log-queries-not-using-indexes=ON
+      - --performance-schema=ON
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql/mysql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-ppassw0rd"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  db2_data:
+  mysql_data:
