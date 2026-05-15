@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>SAFE Upload</title></head>
+<body>
+<h1>파일 업로드 (안전 — Tika MIME 검증 + UUID + 경로 검증)</h1>
+<form method="post" action="/safe/upload" enctype="multipart/form-data">
+  <input type="file" name="file"/>
+  <button>Upload</button>
+</form>
+<p style="color:#c00" th:if="${error}" th:text="${error}"></p>
+<p th:if="${savedAs}">저장됨: <span th:text="${savedAs}"></span></p>
+</body>
+</html>

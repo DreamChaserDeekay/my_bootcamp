@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>SAFE Login</title></head>
+<body>
+<h1>SAFE Login (Prepared Statement)</h1>
+<form method="post" action="/safe/login">
+  <input name="username"/><input name="password" type="password"/>
+  <button>Login</button>
+</form>
+<p style="color:#c00" th:text="${error}"></p>
+</body>
+</html>

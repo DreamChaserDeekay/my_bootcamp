@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p security_bootcamp/week1_foundations/labs security_bootcamp/week2_web_appsec/labs security_bootcamp/week3_network_infra/labs security_bootcamp/week4_advanced_response/labs security_bootcamp/resources security_bootcamp/vulnerable_app/src/main/java/com/example/vuln security_bootcamp/vulnerable_app/src/main/resources)"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Search</title></head>
+<body>
+<h1>게시글 검색 (취약 — UNION SQLi 가능)</h1>
+<form method="get" action="/vuln/search">
+  <input name="q" placeholder="검색어"/>
+  <button>검색</button>
+</form>
+<p style="color: #c00" th:text="${error}"></p>
+<pre th:if="${executedSql}" th:text="${executedSql}"></pre>
+<table border="1">
+  <thead><tr><th>id</th><th>title</th><th>author</th></tr></thead>
+  <tbody>
+    <tr th:each="row : ${results}">
+      <td th:text="${row['ID']}"></td>
+      <td th:text="${row['TITLE']}"></td>
+      <td th:text="${row['AUTHOR']}"></td>
+    </tr>
+  </tbody>
+</table>
+<p>힌트: <code>' UNION SELECT id, username || ':' || password, role FROM users --</code></p>
+</body>
+</html>

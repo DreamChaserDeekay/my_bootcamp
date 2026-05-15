@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Upload</title></head>
+<body>
+<h1>파일 업로드 (취약)</h1>
+<form method="post" action="/vuln/upload" enctype="multipart/form-data">
+  <input type="file" name="file"/>
+  <button>Upload</button>
+</form>
+<p th:if="${savedAs}">저장됨: <span th:text="${savedAs}"></span></p>
+<p>힌트: <code>shell.jsp.png</code>, <code>../../../../tmp/evil.txt</code>, SVG with script</p>
+</body>
+</html>

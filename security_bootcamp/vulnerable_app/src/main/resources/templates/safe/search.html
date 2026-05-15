@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>SAFE Search</title></head>
+<body>
+<h1>게시글 검색 (안전 — Prepared Statement)</h1>
+<form method="get" action="/safe/search">
+  <input name="q"/><button>검색</button>
+</form>
+<table border="1">
+  <thead><tr><th>id</th><th>title</th><th>author</th></tr></thead>
+  <tbody>
+    <tr th:each="row : ${results}">
+      <td th:text="${row['ID']}"></td>
+      <td th:text="${row['TITLE']}"></td>
+      <td th:text="${row['AUTHOR']}"></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

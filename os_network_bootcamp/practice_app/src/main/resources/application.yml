@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: netlab
+  threads:
+    virtual:
+      enabled: false      # JDK 21+에서 true로 바꿔 비교
+
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 200
+      min-spare: 10
+    accept-count: 100
+    max-connections: 8192
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,threaddump,heapdump,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.example.netlab: DEBUG

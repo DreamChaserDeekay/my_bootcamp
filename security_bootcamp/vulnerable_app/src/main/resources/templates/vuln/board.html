@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Board (Stored XSS)</title></head>
+<body>
+<h1>게시판 (취약 — th:utext 사용)</h1>
+<form method="post" action="/vuln/board">
+  <input name="author" placeholder="author" value="alice"/>
+  <input name="title" placeholder="title"/>
+  <textarea name="content" placeholder="content (XSS 페이로드 시도)"></textarea>
+  <button>작성</button>
+</form>
+<hr/>
+<div th:each="p : ${posts}">
+  <h3>[<span th:text="${p['AUTHOR']}"/>] <span th:text="${p['TITLE']}"/></h3>
+  <!-- ❌ 위험: 사용자 입력이 그대로 렌더링됨 -->
+  <div th:utext="${p['CONTENT']}"></div>
+  <hr/>
+</div>
+<p>힌트: <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
+</body>
+</html>

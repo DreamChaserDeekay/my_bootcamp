@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Login</title></head>
+<body>
+<h1>VULN Login (SQLi 가능)</h1>
+<form method="post" action="/vuln/login">
+  <label>Username <input name="username"/></label><br/>
+  <label>Password <input name="password"/></label><br/>
+  <button>Login</button>
+</form>
+<p style="color: #c00" th:text="${error}"></p>
+<pre th:if="${executedSql}" th:text="${executedSql}"></pre>
+<p><b>힌트</b>: <code>admin' --</code> 입력 시도</p>
+</body>
+</html>

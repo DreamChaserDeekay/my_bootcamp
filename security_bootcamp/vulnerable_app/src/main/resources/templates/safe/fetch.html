@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>SAFE Fetch</title></head>
+<body>
+<h1>URL Fetcher (안전 — 화이트리스트 + 내부 IP 차단)</h1>
+<form method="get" action="/safe/fetch">
+  <input name="url" size="60" value="https://cdn.example.com/test"/>
+  <button>Fetch</button>
+</form>
+<pre th:text="${body}"></pre>
+</body>
+</html>

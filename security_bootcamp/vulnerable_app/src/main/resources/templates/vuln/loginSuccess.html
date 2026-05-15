@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Login Success</title></head>
+<body>
+<h1>로그인 성공 (취약 경로)</h1>
+<p>id: <span th:text="${user['ID']}"></span></p>
+<p>username: <span th:text="${user['USERNAME']}"></span></p>
+<p>role: <span th:text="${user['ROLE']}"></span></p>
+<a href="/">홈으로</a>
+</body>
+</html>

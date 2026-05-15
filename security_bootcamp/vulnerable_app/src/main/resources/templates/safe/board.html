@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>SAFE Board</title></head>
+<body>
+<h1>게시판 (안전 — th:text 자동 이스케이프)</h1>
+<form method="post" action="/safe/board">
+  <input name="author" placeholder="author" value="alice"/>
+  <input name="title" placeholder="title"/>
+  <textarea name="content" placeholder="content"></textarea>
+  <button>작성</button>
+</form>
+<hr/>
+<div th:each="p : ${posts}">
+  <h3>[<span th:text="${p['AUTHOR']}"/>] <span th:text="${p['TITLE']}"/></h3>
+  <!-- ✅ 자동 escape: 같은 <script>도 텍스트로 보임 -->
+  <div th:text="${p['CONTENT']}" style="white-space: pre-wrap;"></div>
+  <hr/>
+</div>
+</body>
+</html>

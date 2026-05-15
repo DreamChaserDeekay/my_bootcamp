@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(17) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // Netty
+    implementation 'io.netty:netty-all:4.1.115.Final'
+
+    // Apache HttpClient 5 (RestTemplate 풀용)
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.4.1'
+
+    // Lombok (선택)
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+application {
+    mainClass = 'com.example.netlab.Main'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.named('bootRun') {
+    mainClass = 'com.example.netlab.NetLabApp'
+}

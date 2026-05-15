@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Vulnerable App — Security Bootcamp</title>
+<style>
+  body { font-family: sans-serif; max-width: 900px; margin: 2em auto; padding: 1em; }
+  h2 { border-bottom: 1px solid #ccc; padding-bottom: 0.3em; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; }
+  .card { border: 1px solid #ddd; padding: 1em; border-radius: 6px; }
+  .card.vuln { border-color: #d33; }
+  .card.safe { border-color: #2a7; }
+  code { background: #f4f4f4; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>🔓 Vulnerable App — 학습용</h1>
+<p>⚠ 이 앱은 의도적으로 취약합니다. 로컬에서만 사용하세요.</p>
+
+<h2>실습 메뉴</h2>
+<div class="grid">
+  <div class="card vuln">
+    <h3>❌ /vuln/* — 취약</h3>
+    <ul>
+      <li><a href="/vuln/login">SQL Injection — 로그인</a></li>
+      <li><a href="/vuln/search?q=Spring">SQL Injection — 검색</a></li>
+      <li><a href="/vuln/ping?host=127.0.0.1">OS Command Injection</a></li>
+      <li><a href="/vuln/board">Stored XSS — 게시판</a></li>
+      <li><a href="/vuln/orders/1">IDOR — 주문 조회</a></li>
+      <li><a href="/vuln/fetch?url=http://example.com">SSRF — Fetch</a></li>
+      <li><a href="/vuln/upload">File Upload</a></li>
+    </ul>
+  </div>
+  <div class="card safe">
+    <h3>✅ /safe/* — 패치 후</h3>
+    <ul>
+      <li><a href="/safe/login">SQLi 차단</a></li>
+      <li><a href="/safe/search?q=Spring">SQLi 차단</a></li>
+      <li><a href="/safe/ping?host=127.0.0.1">CmdInjection 차단</a></li>
+      <li><a href="/safe/board">XSS 차단</a></li>
+      <li><a href="/safe/orders/1">IDOR 차단</a></li>
+      <li><a href="/safe/fetch?url=https://cdn.example.com/test">SSRF 차단</a></li>
+      <li><a href="/safe/upload">Upload 안전</a></li>
+    </ul>
+  </div>
+</div>
+
+<h2>실습 가이드</h2>
+<ol>
+  <li>각 vuln 엔드포인트에 공격 시도 → 성공 확인</li>
+  <li>같은 공격을 safe 엔드포인트에 시도 → 차단 확인</li>
+  <li>차이점을 코드(<code>src/main/java</code>)에서 한 줄씩 비교</li>
+</ol>
+</body>
+</html>

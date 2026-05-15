@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+    include-message: never
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        # 운영에서는 secure: true
+        same-site: lax
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:vulndb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    root: INFO
+    com.example.vuln: DEBUG
+
+# 일부러 켜두어 학습용 — 운영에서는 절대 X
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      show-values: ALWAYS

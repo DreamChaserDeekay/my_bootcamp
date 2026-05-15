@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Order</title></head>
+<body>
+<h1>주문 상세 (취약 — IDOR)</h1>
+<p>id: <span th:text="${order['ID']}"></span></p>
+<p>owner: <span th:text="${order['OWNER_USERNAME']}"></span></p>
+<p>product: <span th:text="${order['PRODUCT']}"></span></p>
+<p>amount: <span th:text="${order['AMOUNT']}"></span></p>
+<p>힌트: URL의 id를 1, 2, 3, 4로 바꿔보세요 — 권한 검사 없음.</p>
+</body>
+</html>

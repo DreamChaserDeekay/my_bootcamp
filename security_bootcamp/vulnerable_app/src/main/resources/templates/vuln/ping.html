@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Ping</title></head>
+<body>
+<h1>Ping (취약 — Command Injection 가능)</h1>
+<form method="get" action="/vuln/ping">
+  <input name="host" value="127.0.0.1"/>
+  <button>Ping</button>
+</form>
+<pre th:if="${executedCmd}" th:text="${executedCmd}"></pre>
+<pre th:text="${output}"></pre>
+<p>힌트(Linux): <code>127.0.0.1; whoami</code> &nbsp; (Windows): <code>127.0.0.1 &amp; whoami</code></p>
+</body>
+</html>

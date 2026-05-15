@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>VULN Fetch (SSRF)</title></head>
+<body>
+<h1>URL Fetcher (취약 — SSRF)</h1>
+<form method="get" action="/vuln/fetch">
+  <input name="url" size="60" value="http://example.com"/>
+  <button>Fetch</button>
+</form>
+<pre th:text="${body}"></pre>
+<p>힌트: <code>http://169.254.169.254/</code> (AWS metadata), <code>file:///c:/windows/win.ini</code></p>
+</body>
+</html>

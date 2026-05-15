@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"/><title>SAFE Ping</title></head>
+<body>
+<h1>Ping (안전 — ProcessBuilder 배열 + 정규식)</h1>
+<form method="get" action="/safe/ping">
+  <input name="host" value="127.0.0.1"/><button>Ping</button>
+</form>
+<pre th:text="${output}"></pre>
+</body>
+</html>
