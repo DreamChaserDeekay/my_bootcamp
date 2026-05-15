@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: jvm-lab
+  datasource:
+    url: jdbc:h2:mem:lab
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+  threads:
+    virtual:
+      enabled: false        # 처음엔 끈 상태. lab에서 켜고 비교
+
+server:
+  port: 8080
+  shutdown: graceful
+  tomcat:
+    threads:
+      min-spare: 10
+      max: 50                # 실험을 위해 작게
+    max-connections: 1024
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    heapdump:
+      enabled: true
+    threaddump:
+      enabled: true
+
+logging:
+  level:
+    org.springframework.transaction.interceptor: TRACE
+    org.hibernate.SQL: DEBUG
