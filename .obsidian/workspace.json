@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "os_network_bootcamp/week1_os_shell_basics/00_overview.md",
+                "file": "jvm_spring_bootcamp/week1_jvm_memory_gc/00_overview.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "os_network_bootcamp/week1_os_shell_basics/00_overview.md",
+                "file": "jvm_spring_bootcamp/week1_jvm_memory_gc/00_overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "os_network_bootcamp/week1_os_shell_basics/00_overview.md",
+                "file": "jvm_spring_bootcamp/week1_jvm_memory_gc/00_overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -156,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "os_network_bootcamp/week1_os_shell_basics/00_overview.md",
+                "file": "jvm_spring_bootcamp/week1_jvm_memory_gc/00_overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -183,6 +183,43 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "f604aaf8483bb4a7",
-  "lastOpenFiles": []
+  "active": "94e82ce842478a03",
+  "lastOpenFiles": [
+    "devops_container_bootcamp/resources/troubleshooting_playbook.md",
+    "devops_container_bootcamp/resources/quick_reference.md",
+    "devops_container_bootcamp/resources/glossary.md",
+    "devops_container_bootcamp/resources/books_and_courses.md",
+    "devops_container_bootcamp/resources/tools.md",
+    "devops_container_bootcamp/resources/kubectl_cheatsheet.md",
+    "devops_container_bootcamp/resources/docker_cheatsheet.md",
+    "devops_container_bootcamp/resources/git_cheatsheet.md",
+    "devops_container_bootcamp/practice_app/terraform/main.tf",
+    "devops_container_bootcamp/practice_app/k8s/07-hpa.yaml",
+    "devops_container_bootcamp/practice_app/k8s/06-ingress.yaml",
+    "devops_container_bootcamp/practice_app/k8s/05-service.yaml",
+    "devops_container_bootcamp/practice_app/k8s/04-deployment.yaml",
+    "devops_container_bootcamp/practice_app/k8s/03-secret.yaml",
+    "devops_container_bootcamp/practice_app/k8s/02-configmap.yaml",
+    "devops_container_bootcamp/practice_app/k8s/01-namespace.yaml",
+    "devops_container_bootcamp/practice_app/src/main/resources/application.yml",
+    "devops_container_bootcamp/practice_app/src/main/java/com/example/devopslab/HelloController.java",
+    "devops_container_bootcamp/practice_app/README.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/checklist.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/labs/lab7_github_actions_pipeline.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/05_capstone.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/04_gitops_argocd.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/03_iac_terraform.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/02_pipeline_design.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/01_github_actions.md",
+    "devops_container_bootcamp/week4_cicd_iac_capstone/00_overview.md",
+    "devops_container_bootcamp/week3_kubernetes/checklist.md",
+    "devops_container_bootcamp/week3_kubernetes/labs/lab6_helm_chart.md",
+    "devops_container_bootcamp/week3_kubernetes/labs/lab5_first_deploy.md",
+    "devops_container_bootcamp/week3_kubernetes/05_probes_hpa_debug.md",
+    "devops_container_bootcamp/week3_kubernetes/04_ingress_helm.md",
+    "devops_container_bootcamp/week3_kubernetes/03_configmap_secret_volume.md",
+    "devops_container_bootcamp/week3_kubernetes/02_pod_deployment_service.md",
+    "devops_container_bootcamp/week3_kubernetes/01_k8s_architecture.md",
+    "devops_container_bootcamp/week3_kubernetes/00_overview.md"
+  ]
 }
